@@ -168,24 +168,184 @@ section {
     color: var(--primary-blue);
 }
 
-/* Testimonials Section */
-#testimonials .testimonial {
-    background-color: var(--warm-gray);
-    border-left: 5px solid var(--accent-green);
-    padding: 25px;
-    margin-bottom: 25px;
-    font-style: italic;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-#testimonials .testimonial:hover {
-    transform: translateX(5px);
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-#testimonials blockquote {
+.nav-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: var(--accent-green);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
     margin: 0;
-    font-size: 18px;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-green);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.social-icons i {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    transform: translateY(-3px);
+    color: var(--accent-green);
+}
+
+/* Sample Plan Section */
+.plan-toggle-input {
+    display: none;
+}
+
+.plan-toggle-label {
+    display: inline-block;
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px auto;
+    font-weight: 500;
+    text-align: center;
+}
+
+.plan-toggle-label:hover {
+    background-color: var(--accent-green);
+    transform: translateY(-2px);
+}
+
+.plan-table-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    opacity: 0;
+}
+
+.plan-toggle-input:checked ~ .plan-table-container {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.plan-table th {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.plan-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-gray);
+    transition: background-color 0.3s ease;
+}
+
+.plan-table tr:hover td {
+    background-color: var(--warm-gray);
+}
+
+.plan-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Case Study Images */
+.case-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.icon-case {
+    font-size: 48px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.case-study:hover .icon-case {
+    color: var(--accent-green);
 }
 
 /* Rate Card Section */
@@ -276,6 +436,26 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icons i {
+        font-size: 20px;
+    }
+
     section {
         padding: 30px 15px;
     }
@@ -285,7 +465,6 @@ section {
     }
 
     #approach .cards,
-    #sample-plan .plan-boxes,
     #rate-card .packages {
         flex-direction: column;
         align-items: center;
@@ -293,10 +472,18 @@ section {
     }
 
     #approach .card,
-    #sample-plan .plan-box,
     #rate-card .package {
         width: 100%;
         max-width: 450px;
+    }
+
+    .plan-table {
+        font-size: 14px;
+    }
+
+    .plan-table th,
+    .plan-table td {
+        padding: 10px;
     }
 
     h1 {
@@ -313,6 +500,18 @@ section {
 }
 
 @media (max-width: 480px) {
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
     #hero {
         padding: 60px 10px;
     }
@@ -322,9 +521,21 @@ section {
     }
 
     #approach .card,
-    #sample-plan .plan-box,
     #rate-card .package {
         padding: 20px;
         width: 100%;
+    }
+
+    .case-image {
+        height: 150px;
+    }
+
+    .icon-case {
+        font-size: 36px;
+    }
+
+    .plan-toggle-label {
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
