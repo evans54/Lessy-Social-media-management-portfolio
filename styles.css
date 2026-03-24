@@ -1,0 +1,240 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #222222;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: #0D47A1;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(to right, #0D47A1, #00C853);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 40px;
+}
+
+#hero h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+#hero h2 {
+    font-size: 24px;
+    color: white;
+    margin: 10px 0;
+}
+
+#hero p {
+    font-size: 18px;
+    font-style: italic;
+    color: white;
+    margin: 20px 0;
+}
+
+/* About Section */
+#about p {
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* Approach Section */
+#approach .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#approach .card {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#approach .card h3 {
+    margin-top: 0;
+    color: #0D47A1;
+}
+
+/* Case Studies Section */
+#case-studies .case-study {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sample Plan Section */
+#sample-plan .plan-boxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#sample-plan .plan-box {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    padding: 20px;
+    width: 180px;
+    text-align: center;
+}
+
+#sample-plan .plan-box:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+#sample-plan .plan-box h3 {
+    margin-top: 0;
+    color: #0D47A1;
+}
+
+/* Testimonials Section */
+#testimonials .testimonial {
+    background-color: #F5F5F5;
+    border-left: 5px solid #0D47A1;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+#testimonials blockquote {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Rate Card Section */
+#rate-card .packages {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#rate-card .package {
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#rate-card .package.highlight {
+    background-color: #00C853;
+    color: white;
+}
+
+#rate-card .package.highlight h3,
+#rate-card .package.highlight h4,
+#rate-card .package.highlight ul {
+    color: white;
+}
+
+#rate-card .package h3 {
+    margin-top: 0;
+}
+
+#rate-card .package h4 {
+    font-size: 20px;
+    color: #00C853;
+}
+
+#rate-card .package ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+#rate-card .addons {
+    margin-top: 40px;
+}
+
+#rate-card .addons h2 {
+    color: #0D47A1;
+}
+
+#rate-card .addons ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#rate-card .addons li {
+    margin-bottom: 10px;
+}
+
+/* CTA Section */
+#cta {
+    text-align: center;
+    background-color: #F5F5F5;
+    padding: 60px 20px;
+}
+
+#cta h1 {
+    color: #0D47A1;
+    font-size: 30px;
+}
+
+#cta p {
+    font-style: italic;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #approach .cards,
+    #sample-plan .plan-boxes,
+    #rate-card .packages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #approach .card,
+    #sample-plan .plan-box,
+    #rate-card .package {
+        width: 100%;
+        max-width: 400px;
+    }
+}
